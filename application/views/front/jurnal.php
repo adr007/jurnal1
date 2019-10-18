@@ -27,12 +27,14 @@
                             <th width="100"></th>
                         </thead>
                         <tbody>
+                           <?php $no = 1; foreach ($jurnal as $data) { ?>
                             <tr>
-                                <td>1</td>
-                                <td>Soleh</td>
-                                <td>IMPLEMENTASI ALGORITMA RC4 STREAM CIPHER SEBAGAI METODE OBFUSCATION STRING PADA DATABASE MySQL</td>
-                                <td><a href="info.php">Abstrak</a> | <a href="">PDF</a></td>
+                                <td><?= $no++; ?></td>
+                                <td><?= $data['author'] ?></td>
+                                <td><?= $data['judul'] ?></td>
+                                <td><a href="<?= base_url('menu/info/').$data['id'] ?>">Abstrak</a> | <a href="<?= base_url().$data['file'] ?>">PDF</a></td>
                             </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
