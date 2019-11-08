@@ -24,14 +24,16 @@
                             <th width="15">#</th>
                             <th width="180">Author</th>
                             <th>Judul</th>
+                            <th>Publikasi</th>
                             <th width="100"></th>
                         </thead>
                         <tbody>
                             <?php $no = 1; foreach ($jurnal as $data) { ?>
                             <tr>
                                 <td><?= $no++; ?></td>
-                                <td><?= $data['author'] ?></td>
+                                <td><?= $data['author'] ?>, <?= $data['author2'] ?>, <?= $data['author3'] ?></td>
                                 <td><?= $data['judul'] ?></td>
+                                <td><?= $data['tgl'] ?></td>
                                 <td><a href="<?= base_url('menu/info/').$data['id'] ?>">Abstrak</a> | <a href="<?= base_url().$data['file'] ?>">PDF</a></td>
                             </tr>
                             <?php } ?>

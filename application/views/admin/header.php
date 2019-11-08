@@ -138,6 +138,9 @@ desired effect
         <li id="mn2">
           <a href="<?= base_url('admin/jurnal') ?>"><i class="fa fa-file"></i> <span>Data Jurnal</span></a>
         </li>
+       <!--  <li id="mn4">
+          <a href="<?= base_url('admin/metode') ?>"><i class="fa fa-file"></i> <span>Data Metode</span></a>
+        </li> -->
         <li id="mn3">
           <a href="<?= base_url('admin/pengaturan') ?>"><i class="fa fa-gear"></i> <span>Pengaturan</span></a>
         </li>

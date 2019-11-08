@@ -29,8 +29,30 @@
                   </div>
 
                   <div class="form-group">
-                    <label>Author</label>
+                    <label>Metode</label>
+                    <select class="form-control" name="metode" required>
+                      <option value="">-- Pilih Metode --</option>
+                      <?php 
+                          foreach ($metode as $data) {
+                            echo "<option value='$data[id]'>$data[metode]</option>";
+                          }
+                       ?>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Author 1</label>
                     <input type="text" class="form-control" name="author" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Author 2</label>
+                    <input type="text" class="form-control" name="author2" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Author 3</label>
+                    <input type="text" class="form-control" name="author3" required>
                   </div>
 
                   <div class="form-group">

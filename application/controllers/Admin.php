@@ -25,7 +25,8 @@ class Admin extends CI_Controller {
 
 	public function tambah()
 	{
-		$this->load->view('admin/tambah');
+		$data['metode'] = $this->Dok_m->getAllMetode();
+		$this->load->view('admin/tambah', $data);
 	}
 
 	public function add_jurnal()
@@ -55,6 +56,7 @@ class Admin extends CI_Controller {
 	public function info($id = '')
 	{	
 		$data['jurnal'] = $this->Dok_m->get($id);
+		$data['metode'] = $this->Dok_m->getAllMetode();
 		$this->load->view('admin/info', $data);
 	}
 
@@ -91,6 +93,12 @@ class Admin extends CI_Controller {
 			$this->session->set_flashdata('notif', '<div class="alert alert-danger alert-dismissible"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button><h4><i class="icon fa fa-ban"></i> Gagal</h4> Password lama salah</div>');
 		}
 		redirect('admin/pengaturan');
+	}
+
+	public function metode()
+	{
+		$data['metode'] = $this->Dok_m->getAllMetode();
+		$this->load->view('admin/metode', $data);
 	}
 
 	public function keluar(){

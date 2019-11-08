@@ -39,7 +39,11 @@
                         <a href="<?= base_url('menu/info/').$data['id']  ?>">
                             <i class="fa fa-book" aria-hidden="true"></i>
                             <p><?= $data['judul'] ?></p>
-                            <p style="text-transform: none; color: #e7a711"><?= $data['author'] ?></p>
+                            <p style="text-transform: none; color: #e7a711"><?= $data['author'] ?> <br> <?= $data['author2'] ?> <br> <?= $data['author3'] ?></p>
+                            <p style="">                                        
+                                <button style="float: right;" class="btn btn-warning"><span class="fa fa-calendar"></span> <?= $data['tgl'] ?></button>
+                            </p>
+                            <br>
                         </a>
                    </div>
                 </div>

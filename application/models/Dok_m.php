@@ -6,6 +6,16 @@ class Dok_m extends CI_Model {
 	public function cari($key){
 		$this->db->like('judul', $key);
 		$this->db->or_like('author', $key);
+		$this->db->or_like('author2', $key);
+		$this->db->or_like('author3', $key);
+		$this->db->or_like('abstrak', $key);
+		$this->db->order_by('tgl', 'DESC');
+		$gas = $this->db->get('jurnal');
+		return $gas->result_array();
+	}
+
+	public function cariMetode($key){
+		$this->db->where('metode', $key);
 		$this->db->order_by('tgl', 'DESC');
 		$gas = $this->db->get('jurnal');
 		return $gas->result_array();
@@ -52,7 +62,10 @@ class Dok_m extends CI_Model {
 		}else{
 			$data = [
 				"judul" => $this->input->post('judul', true),
+				"metode" => $this->input->post('metode', true),
 				"author" => $this->input->post('author', true),
+				"author2" => $this->input->post('author2', true),
+				"author3" => $this->input->post('author3', true),
 				"abstrak" => $this->input->post('abstrak', true),
 				"tgl" => date("Y-m-d"),
 				"file" => $jalur.$config['file_name'].'.'.$ekstensi
@@ -72,7 +85,10 @@ class Dok_m extends CI_Model {
 		if (empty($nama)) {
 			$data = [
 				"judul" => $this->input->post('judul', true),
+				"metode" => $this->input->post('metode', true),
 				"author" => $this->input->post('author', true),
+				"author2" => $this->input->post('author2', true),
+				"author3" => $this->input->post('author3', true),
 				"abstrak" => $this->input->post('abstrak', true)
 		    ];
 		    $this->db->where('id', $this->input->post('idx', true));
@@ -101,9 +117,12 @@ class Dok_m extends CI_Model {
 			}else{
 				$data = [
 					"judul" => $this->input->post('judul', true),
+					"metode" => $this->input->post('metode', true),
 					"author" => $this->input->post('author', true),
+					"author2" => $this->input->post('author2', true),
+					"author3" => $this->input->post('author3', true),
 					"abstrak" => $this->input->post('abstrak', true),
-					"tgl" => date("Y-m-d"),
+					// "tgl" => date("Y-m-d"),
 					"file" => $jalur.$config['file_name'].'.'.$ekstensi
 			    ];
 				$this->db->where('id', $this->input->post('idx', true));
@@ -112,6 +131,17 @@ class Dok_m extends CI_Model {
 			}
 		}
 		
+	}
+
+	public function getAllMetode(){
+		$this->db->order_by('metode', 'ASC');
+		$gas = $this->db->get('metode');
+		return $gas->result_array();
+	}
+
+	public function getMetode($id){
+		$this->db->where('id', $id);
+		return $this->db->get('metode')->row_array();
 	}
 
 }

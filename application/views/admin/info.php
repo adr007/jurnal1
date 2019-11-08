@@ -31,9 +31,36 @@
                     <input type="text" class="form-control" value="<?= $jurnal['judul'] ?>" name="judul" required>
                   </div>
 
+                 <div class="form-group">
+                    <label>Metode</label>
+                    <select class="form-control" name="metode" required>
+                      <option value="">-- Pilih Metode --</option>
+                      <?php 
+                          foreach ($metode as $data) {
+                            if ($data['id'] == $jurnal['metode']) {
+                              echo "<option value='$data[id]' selected>$data[metode]</option>";
+                            }
+                            else{
+                              echo "<option value='$data[id]'>$data[metode]</option>";
+                            }
+                          }
+                       ?>
+                    </select>
+                  </div>
+
                   <div class="form-group">
-                    <label>Author</label>
-                    <input type="text" class="form-control" value="<?= $jurnal['author'] ?>" name="author" required>
+                    <label>Author 1</label>
+                    <input type="text" class="form-control" name="author" value="<?= $jurnal['author'] ?>" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Author 2</label>
+                    <input type="text" class="form-control" name="author2" value="<?= $jurnal['author2'] ?>" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Author 3</label>
+                    <input type="text" class="form-control" name="author3" value="<?= $jurnal['author3'] ?>" required>
                   </div>
 
                   <input type="hidden" name="idx" value="<?= $jurnal['id'] ?>">

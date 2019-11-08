@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Sistem Informasi Jurnal</title>
+    <title>Perpustakaan Jurnal Jurusan Teknik Geofisika - Universitas Halu Oleo</title>
 
     <!-- Favicon -->
     <link rel="icon" href="<?= base_url('komponen/front/images/') ?>yellow-book.jpg" type="image/x-icon" />
@@ -69,7 +69,7 @@
                 </form>
             </div><!-- End searchForm -->
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="col-md-2 p0">
+            <div class="col-md-4 p0">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#min_navbar">
                     <span class="sr-only">Toggle navigation</span>
@@ -77,16 +77,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="<?= base_url('komponen/front/images/') ?>logo.png" alt="" width="200" style="margin-top: -10px"></a>
+                    <a class="navbar-brand" href="#">
+                        <img src="<?= base_url('komponen/front/images/') ?>logo.png" alt="" width="200" style="margin-top: -10px">
+                        <span style="width: 100%; font-size: 11pt">Perpustakaan Jurnal Jurusan Teknik Geofisika</span>
+                    </a>
                 </div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="col-md-10 p0">
+            <div class="col-md-8 p0">
                 <div class="collapse navbar-collapse" id="min_navbar">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="<?= base_url('menu') ?>">Beranda</a></li>
                         <li><a href="<?= base_url('menu/jurnal') ?>">Jurnal</a></li>
+                        <li><a href="<?= base_url('menu/metode') ?>">Metode</a></li>
                         
                         <!-- <li><a href="#" class="nav_searchFrom"><i class="fa fa-search"></i></a></li> -->
                     </ul>

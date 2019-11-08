@@ -23,6 +23,7 @@ class Menu extends CI_Controller {
 	public function info($id = '')
 	{
 		$data['jurnal'] = $this->Dok_m->get($id);
+		$data['metode'] = $this->Dok_m->getMetode($data['jurnal']['metode']);
 		$this->load->view('front/info', $data);
 	}
 
@@ -31,5 +32,15 @@ class Menu extends CI_Controller {
 		$data['jurnal'] = $this->Dok_m->cari($key);
 		$data['key'] = $key;
 		$this->load->view('front/cari', $data);
+	}
+
+	public function metode()
+	{
+		$data['metode'] = $this->Dok_m->getAllMetode();
+		if (isset($_GET['key'])) {
+			$data['jurnal'] = $this->Dok_m->cariMetode($this->input->get('key', true));
+			$data['metodex'] = $this->Dok_m->getMetode($_GET['key']);
+		}
+		$this->load->view('front/metode', $data);
 	}
 }
